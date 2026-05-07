@@ -14,11 +14,14 @@ def main():
 
     print(firstGetMin)
 
-    getMin=[]
+    tropicalList=[]
     for term in firstGetMin:
-        getMin.append(term.split("*"))
+        term_a=term.replace("**", "^")
+        term_b=term_a.replace("*", "+")
+        tropicalList.append(term_b.replace("^", "*"))
 
-    print(getMin)
+    tropicalExp = "min("+str(tropicalList).replace("\'","").replace("[","").replace("]","")+")"
+    print(tropicalExp)
 
 if __name__== "__main__":
     main()
